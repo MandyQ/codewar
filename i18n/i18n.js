@@ -9,10 +9,10 @@
 					lang:"en",title:"English"
 			}];
 			this.instance=null;
-			//获取当前浏览器语言
+			//获取当前浏览器语言(the preferred language of the user)
 			if(window.navigator){
 					var lang =(navigator.language || navigator.browserLanguage);
-					if(lang!=null&&lang!=undefined&&lang!=""){
+					if(lang){
 							lang=lang.toLowerCase();
 							if (lang.indexOf("en")>-1){
 									this.language="en";
@@ -28,12 +28,12 @@
 	}
 
 	i18n.prototype={
-			getSupportLanguage:function (lang) {
-					if(lang=="en"){
-							return i18n_instance.en;
-					}
-					return i18n_instance.zh;
-			}
+			// getSupportLanguage:function (lang) {
+			// 		if(lang=="en"){
+			// 				return i18n_instance.en;
+			// 		}
+			// 		return i18n_instance.zh;
+			// }
 	}
 
 	var i18n_instance={
@@ -44,6 +44,6 @@
 					title:"i18n internationalization"		
 			}
 	}
-
+	
 	window.I18n=i18n;
 })()
